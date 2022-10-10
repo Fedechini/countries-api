@@ -1,2 +1,76 @@
-body {
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 6rem;
+  background-color: var(--dark-blue-el);
+  color: var(--white);
+}
+
+.toggle-mode {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  font-size: 1.6rem;
+  cursor: pointer;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.countries__container {
+  padding: 3rem 6rem;
+  background-color: var(--very-dark-blue-bg);
+}
+
+.countries-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 5rem;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+
+.countrie {
+  background-color: var(--dark-blue-el);
+  border-radius: 5px;
+  max-width: 35rem;
+  box-shadow: 0.75rem 0.5rem 2.5rem var(--very-dark-blue-txt);
+}
+
+.countrie-img {
+  border-radius: 5px;
+  height: 17.5rem;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.countrie__data {
+  color: var(--white);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 800;
+}
+
+.countrie__name {
+  font-size: 2.5rem;
+}
+
+.countrie__data-text {
+  font-weight: 600;
+}
+
+.countrie__data-span {
+  margin-left: 3px;
+  font-weight: 300;
+}
+
+.countrie__name {
+  margin-bottom: 1.5rem;
 }
