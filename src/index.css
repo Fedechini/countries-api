@@ -5,8 +5,10 @@
   --very-dark-blue-bg: hsl(207, 26%, 17%);
   --very-dark-blue-txt: hsl(200, 15%, 8%);
   --dark-gray-inpt: hsl(0, 0%, 52%);
-  --very-light-gray-bg: hsl(0, 0%, 98%);
+  --very-light-gray-bg: hsl(0, 0%, 95%);
   --white: hsl(0, 0%, 100%);
+  --dark-box-shadow: 0.25rem 0.5rem 0.75rem var(--very-dark-blue-txt);
+  --light-box-shadow: 0.25rem 0.5rem 0.75rem rgb(200, 200, 200);
 }
 
 * {

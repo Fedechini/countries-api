@@ -1,35 +1,33 @@
 import React from "react";
 
-function Countries({ countries }) {
+function Countries({ countries, searchCountry, filterCountries }) {
   return (
     <div className="countries__container">
       <ul className="countries-list">
-        {countries.map((countrie, i) => {
+        {filterCountries(searchCountry(countries)).map((country, i) => {
           return (
-            <li className="countrie" key={i}>
+            <li className="country" key={i}>
               <div
                 style={{
-                  backgroundImage: `url(${countrie.flags.svg})`,
+                  backgroundImage: `url(${country.flags.svg})`,
                 }}
-                className="countrie-img"
+                className="country-img"
               ></div>
-              <div className="countrie__data">
-                <h2 className="countrie__name">{countrie.name.common}</h2>
-                <p className="countrie__data-text">
+              <div className="country__data">
+                <h2 className="country__name">{country.name.common}</h2>
+                <p className="country__data-text">
                   Population:{" "}
-                  <span className="countrie__data-span">
-                    {countrie.population}
+                  <span className="country__data-span">
+                    {country.population}
                   </span>
                 </p>
-                <p className="countrie__data-text">
+                <p className="country__data-text">
                   Region:{" "}
-                  <span className="countrie__data-span">{countrie.region}</span>
+                  <span className="country__data-span">{country.region}</span>
                 </p>
-                <p className="countrie__data-text">
+                <p className="country__data-text">
                   Capital:{" "}
-                  <span className="countrie__data-span">
-                    {countrie.capital}
-                  </span>
+                  <span className="country__data-span">{country.capital}</span>
                 </p>
               </div>
             </li>
