@@ -2,6 +2,8 @@ import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import CountryInfo from "./components/CountryInfo";
+import Loading from "./components/Loading";
+import Error from "./components/Error";
 import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -57,15 +59,9 @@ function App() {
     getAll();
   }, []);
 
-  if (error) return <h1>Error: {error.message}</h1>;
+  if (error) return <Error message={error.message} />;
 
-  if (!isLoaded)
-    return (
-      <>
-        <Header />
-        <h1>Loading...</h1>
-      </>
-    );
+  if (!isLoaded) return <Loading />;
 
   return (
     <main className="app-container" id={theme}>
