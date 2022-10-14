@@ -6,8 +6,6 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-let allURL = "https://restcountries.com/v3.1/all";
-
 function App() {
   const [countries, setCountries] = useState([]);
   const [theme, setTheme] = useState("dark");
@@ -24,7 +22,7 @@ function App() {
     try {
       const res = await axios({
         method: "GET",
-        url: allURL,
+        url: "https://restcountries.com/v3.1/all",
       });
 
       setCountries(res.data);
@@ -57,7 +55,6 @@ function App() {
 
   useEffect(() => {
     getAll();
-    console.log(countries);
   }, []);
 
   if (error) return <h1>Error: {error.message}</h1>;
