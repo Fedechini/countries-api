@@ -50,7 +50,7 @@ function CountriesForm({ theme, setQuery, setFilterParam }) {
         className="filter-input"
         aria-label="Filter by Region"
       >
-        <option value="All">Filter by Region</option>
+        <option value="All">All</option>
         <option value="Africa">Africa</option>
         <option value="Americas">America</option>
         <option value="Asia">Asia</option>

@@ -1,7 +1,8 @@
 import "./App.css";
 import Header from "./components/Header";
-import Countries from "./components/Countries";
-import CountrieForm from "./components/CountriesForm";
+import Home from "./components/Home";
+import CountryInfo from "./components/CountryInfo";
+import { Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -56,6 +57,7 @@ function App() {
 
   useEffect(() => {
     getAll();
+    console.log(countries);
   }, []);
 
   if (error) return <h1>Error: {error.message}</h1>;
@@ -71,16 +73,27 @@ function App() {
   return (
     <main className="app-container" id={theme}>
       <Header toggleTheme={toggleTheme} theme={theme} />
-      <CountrieForm
-        theme={theme}
-        setQuery={setQuery}
-        setFilterParam={setFilterParam}
-      />
-      <Countries
-        countries={countries}
-        searchCountry={searchCountry}
-        filterCountries={filterCountries}
-      />
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              setFilterParam={setFilterParam}
+              setQuery={setQuery}
+              countries={countries}
+              theme={theme}
+              searchCountry={searchCountry}
+              filterCountries={filterCountries}
+            />
+          }
+        ></Route>
+
+        <Route
+          path="/country/:countryName"
+          element={<CountryInfo theme={theme} countries={countries} />}
+        ></Route>
+      </Routes>
     </main>
   );
 }

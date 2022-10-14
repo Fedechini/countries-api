@@ -30,7 +30,7 @@ body {
   font-family: "Nunito Sans", sans-serif;
 }
 
-/* @media (max-width: 900px) {
+@media (max-width: 900px) {
   html {
     font-size: 55%;
   }
@@ -40,4 +40,4 @@ body {
   html {
     font-size: 50%;
   }
-} */
+}
